@@ -70,7 +70,7 @@
 <pre class="output"><code>[1] &quot;low&quot;    &quot;medium&quot; &quot;high&quot;  
 </code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">min</span>(food) ## doesn&#39;t work</code></pre>
-<pre class="error"><code>Error in Summary.factor(structure(c(1L, 3L, 2L, 3L, 1L, 2L, 3L), .Label = c(&quot;low&quot;, : &#39;min&#39; not meaningful for factors
+<pre class="error"><code>Error in Summary.factor(structure(c(1L, 3L, 2L, 3L, 1L, 2L, 3L), .Label = c(&quot;low&quot;, : min not meaningful for factors
 </code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">food &lt;-<span class="st"> </span><span class="kw">factor</span>(food, <span class="dt">levels=</span><span class="kw">c</span>(<span class="st">&quot;low&quot;</span>, <span class="st">&quot;medium&quot;</span>, <span class="st">&quot;high&quot;</span>), <span class="dt">ordered=</span><span class="ot">TRUE</span>)
 <span class="kw">levels</span>(food)</code></pre>

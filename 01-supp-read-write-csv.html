@@ -90,19 +90,19 @@ carSpeeds &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span c
 
 carSpeeds$Color&lt;-<span class="st"> </span><span class="kw">ifelse</span>(carSpeeds$Color==<span class="st">&#39;Blue&#39;</span>, <span class="st">&#39;Green&#39;</span>, carSpeeds$Color)
 carSpeeds$Color</code></pre>
-<pre class="output"><code>  [1] &quot;Green&quot; &quot;1&quot;     &quot;Green&quot; &quot;5&quot;     &quot;4&quot;     &quot;Green&quot; &quot;Green&quot; &quot;2&quot;    
-  [9] &quot;5&quot;     &quot;4&quot;     &quot;4&quot;     &quot;5&quot;     &quot;Green&quot; &quot;Green&quot; &quot;2&quot;     &quot;4&quot;    
- [17] &quot;Green&quot; &quot;Green&quot; &quot;5&quot;     &quot;Green&quot; &quot;Green&quot; &quot;Green&quot; &quot;4&quot;     &quot;Green&quot;
- [25] &quot;4&quot;     &quot;4&quot;     &quot;4&quot;     &quot;4&quot;     &quot;5&quot;     &quot;Green&quot; &quot;4&quot;     &quot;5&quot;    
- [33] &quot;2&quot;     &quot;4&quot;     &quot;2&quot;     &quot;2&quot;     &quot;Green&quot; &quot;4&quot;     &quot;2&quot;     &quot;4&quot;    
- [41] &quot;2&quot;     &quot;2&quot;     &quot;4&quot;     &quot;4&quot;     &quot;5&quot;     &quot;2&quot;     &quot;Green&quot; &quot;4&quot;    
- [49] &quot;4&quot;     &quot;2&quot;     &quot;2&quot;     &quot;4&quot;     &quot;5&quot;     &quot;4&quot;     &quot;Green&quot; &quot;Green&quot;
- [57] &quot;2&quot;     &quot;Green&quot; &quot;5&quot;     &quot;2&quot;     &quot;4&quot;     &quot;Green&quot; &quot;Green&quot; &quot;5&quot;    
- [65] &quot;2&quot;     &quot;4&quot;     &quot;4&quot;     &quot;2&quot;     &quot;Green&quot; &quot;5&quot;     &quot;Green&quot; &quot;4&quot;    
+<pre class="output"><code>  [1] &quot;Green&quot; &quot;4&quot;     &quot;Green&quot; &quot;5&quot;     &quot;3&quot;     &quot;Green&quot; &quot;Green&quot; &quot;1&quot;    
+  [9] &quot;5&quot;     &quot;3&quot;     &quot;3&quot;     &quot;5&quot;     &quot;Green&quot; &quot;Green&quot; &quot;1&quot;     &quot;3&quot;    
+ [17] &quot;Green&quot; &quot;Green&quot; &quot;5&quot;     &quot;Green&quot; &quot;Green&quot; &quot;Green&quot; &quot;3&quot;     &quot;Green&quot;
+ [25] &quot;3&quot;     &quot;3&quot;     &quot;3&quot;     &quot;3&quot;     &quot;5&quot;     &quot;Green&quot; &quot;3&quot;     &quot;5&quot;    
+ [33] &quot;1&quot;     &quot;3&quot;     &quot;1&quot;     &quot;1&quot;     &quot;Green&quot; &quot;3&quot;     &quot;1&quot;     &quot;3&quot;    
+ [41] &quot;1&quot;     &quot;1&quot;     &quot;3&quot;     &quot;3&quot;     &quot;5&quot;     &quot;1&quot;     &quot;Green&quot; &quot;3&quot;    
+ [49] &quot;3&quot;     &quot;1&quot;     &quot;1&quot;     &quot;3&quot;     &quot;5&quot;     &quot;3&quot;     &quot;Green&quot; &quot;Green&quot;
+ [57] &quot;1&quot;     &quot;Green&quot; &quot;5&quot;     &quot;1&quot;     &quot;3&quot;     &quot;Green&quot; &quot;Green&quot; &quot;5&quot;    
+ [65] &quot;1&quot;     &quot;3&quot;     &quot;3&quot;     &quot;1&quot;     &quot;Green&quot; &quot;5&quot;     &quot;Green&quot; &quot;3&quot;    
  [73] &quot;5&quot;     &quot;5&quot;     &quot;Green&quot; &quot;Green&quot; &quot;Green&quot; &quot;Green&quot; &quot;Green&quot; &quot;5&quot;    
- [81] &quot;2&quot;     &quot;Green&quot; &quot;5&quot;     &quot;2&quot;     &quot;2&quot;     &quot;4&quot;     &quot;4&quot;     &quot;5&quot;    
- [89] &quot;5&quot;     &quot;5&quot;     &quot;5&quot;     &quot;4&quot;     &quot;4&quot;     &quot;4&quot;     &quot;5&quot;     &quot;2&quot;    
- [97] &quot;5&quot;     &quot;2&quot;     &quot;2&quot;     &quot;5&quot;    
+ [81] &quot;1&quot;     &quot;Green&quot; &quot;5&quot;     &quot;1&quot;     &quot;1&quot;     &quot;3&quot;     &quot;3&quot;     &quot;5&quot;    
+ [89] &quot;5&quot;     &quot;5&quot;     &quot;5&quot;     &quot;3&quot;     &quot;3&quot;     &quot;3&quot;     &quot;5&quot;     &quot;1&quot;    
+ [97] &quot;5&quot;     &quot;1&quot;     &quot;1&quot;     &quot;5&quot;    
 </code></pre>
 <p>What happened?!? It looks like ‘Blue’ was replaced with ‘Green’, but every other color was turned into a number (as a character string, given the quote marks before and after). This is because the colors of the cars were loaded as factors, and the factor level was reported following replacement.</p>
 <p>Now, let’s load the dataset using <code>stringsAsFactors=FALSE</code>, and see what happens when we try to replace ‘Blue’ with ‘Green’ in the <code>$Color</code> column:</p>
@@ -175,7 +175,7 @@ carSpeeds$State</code></pre>
  
 <span class="kw">unique</span>(carSpeeds$Color)</code></pre>
 <pre class="output"><code>[1] Green  Red  White Red   Black
-Levels:  Red Black Green Red White
+Levels: Black Green Red  Red White
 </code></pre>
 <p>Oops, we see two values for red cars.</p>
 <p>Let’s try again, this time importing the data using the <code>strip.white</code> argument. NOTE - this argument must be accompanied by the <code>sep</code> argument, by which we indicate the type of delimiter in the file (the comma for most .csv files)</p>
