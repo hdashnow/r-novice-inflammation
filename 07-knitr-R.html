@@ -30,7 +30,7 @@
           <h2 class="subtitle">Dynamic reports with knitr</h2>
           <section class="objectives panel panel-warning">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-certificate"></span>Learning Objectives</h2>
+<h2 id="learning-objectives"><span class="glyphicon glyphicon-certificate"></span>Learning Objectives</h2>
 </div>
 <div class="panel-body">
 <ul>
@@ -43,14 +43,14 @@
 <p><code>knitr</code> is an R package that allows you to organize your notes, code, and results in a single document. It’s a great tool for “literate programming” – the idea that your code should be readable by humans as well as computers! It also keeps your writing and results together, so if you collect some new data or change how you clean the data, you just have to re-compile the document and you’re up to date!</p>
 <p>You write <code>knitr</code> documents in a simple plain text-like format called markdown, which allows you to format text using intuitive notation, so that you can focus on the content you’re writing. But you still get a well-formatted document out. In fact, you can turn your plain text (and R code and results) into an html file or, if you have an installation of LaTeX and Pandoc on your machine, a pdf, or even a Word document (if you must!).</p>
 <p>To get started, install the <code>knitr</code> package.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&quot;knitr&quot;</span>)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&quot;knitr&quot;</span>)</code></pre></div>
 <p>When you click on File -&gt; New File, there is an option for “R Markdown…”. Choose this and accept the default options in the dialog box that follows (but note that you can also create presentations this way). Save the file and click on the “Knit HTML” button at the top of the script. Compare the output to the source.</p>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Challenge - Explore formatting text in markdown</h2>
+<h2 id="challenge---explore-formatting-text-in-markdown"><span class="glyphicon glyphicon-pencil"></span>Challenge - Explore formatting text in markdown</h2>
 </div>
 <div class="panel-body">
-<p>Visit <a href="http://rmarkdown.rstudio.com/authoring_basics.html">http://rmarkdown.rstudio.com/authoring_basics.html</a> and briefly check out some of the formatting options.</p>
+<p>Visit <a href="http://rmarkdown.rstudio.com/authoring_basics.html" class="uri">http://rmarkdown.rstudio.com/authoring_basics.html</a> and briefly check out some of the formatting options.</p>
 <p>In the example document add</p>
 <ul>
 <li>Headers using <code>#</code></li>
@@ -60,13 +60,13 @@
 </ul>
 </div>
 </section>
-<p>Markdown also supports LaTeX equation editing. We can display pretty equations by enclosing them in <code>$</code>. E.g. <code>$\alpha = \dfrac{1}{(1 - \beta)^2}$</code> renders as: <span class="math">\(\alpha = \dfrac{1}{(1 - \beta)^2}\)</span>.</p>
+<p>Markdown also supports LaTeX equation editing. We can display pretty equations by enclosing them in <code>$</code>. E.g. <code>$\alpha = \dfrac{1}{(1 - \beta)^2}$</code> renders as: <span class="math inline">\(\alpha = \dfrac{1}{(1 - \beta)^2}\)</span>.</p>
 <p>The top of the source (.Rmd) file has some header material in YAML format (enclosed by triple dashes). Some of this gets displayed in the output header, other of it provides formatting information to the conversion engine.</p>
 <p>To distinguish R code from text, RMarkdown uses three back-ticks followed by <code>{r}</code> to distinguish a “code chunk”. In RStudio, the keyboard shortcut to create a code chunk is command-option-i or control-alt-i.</p>
 <p>A code chunk will set off the code and its results in the output document, but you can also print the results of code within a text block by enclosing code like so: <code>`r code-here`</code>.</p>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Challenge - Use knitr to produce a report</h2>
+<h2 id="challenge---use-knitr-to-produce-a-report"><span class="glyphicon glyphicon-pencil"></span>Challenge - Use knitr to produce a report</h2>
 </div>
 <div class="panel-body">
 <ol style="list-style-type: decimal">
