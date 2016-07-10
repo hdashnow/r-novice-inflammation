@@ -437,9 +437,8 @@ We'll learn why this is so in the next lesson.
 > apply call and check your intuition by applying the mean function.
 >
 > > ## Solution
+> > 1. `apply(dat[1:5, ], 1, mean)`
 > > ~~~
-> > # 1.
-> > apply(dat[1:5, ], 1, mean)
 > > # 2.
 > > apply(dat[, 1:10], 2, mean)
 > > # 3.
