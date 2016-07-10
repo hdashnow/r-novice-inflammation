@@ -718,9 +718,18 @@ We'll learn why this is so in the next lesson.
 > 1. Write a vector containing each affected patient (hint: `? seq`)
 > 2. Create a new data frame with in which you halve the first five days' values in only those patients
 > 3. Print out the corrected data frame to check that your code has fixed the problem
+>
+> > ## Solution
+> > ~~~
+> > whichPatients <- seq(2,40,2)
+> > whichDays <- c(1:5)
+> > dat2 <- dat
+> > dat2[whichPatients,whichDays] <- dat2[whichPatients,whichDays]/2
+> > (dat2)
+> > ~~~
+> > {: .r}
+> {: .solution}
 {: .challenge}
-
-
 
 > ## Using the Apply Function on Patient Data
 >
@@ -737,8 +746,19 @@ We'll learn why this is so in the next lesson.
 >
 > Think about the number of rows and columns you would expect as the result before each
 > apply call and check your intuition by applying the mean function.
+>
+> > ## Solution
+> > ~~~
+> > # 1.
+> > apply(dat[1:5, ], 1, mean)
+> > # 2.
+> > apply(dat[, 1:10], 2, mean)
+> > # 3.
+> > apply(dat[, seq(1,40, by=2)], 2, mean)
+> > ~~~
+> > {: .r}
+> {: .solution}
 {: .challenge}
-
 
 
 ### Plotting
